@@ -38,6 +38,7 @@
     <ul>
       <li><strong>Blank is not zero.</strong> The sheet treats an empty rep cell and a logged 0 identically — both add weight. In Uppies, <strong>no entry</strong> just projects the weight forward for planning, while <strong>an explicitly logged 0</strong> counts as a failure and deloads. A session you haven't done yet and a session where you got zero reps are not the same thing.</li>
       <li><strong>Bicep Curl reads its own rep target.</strong> The sheet's curl formula compares your reps against the Tricep Extension's target — a copy-paste bug that's invisible only because both default to 12. Uppies fixes it.</li>
+      <li><strong>Barbell lifts never go below the bar.</strong> The sheet's deload math will happily prescribe a 12.5 lb "barbell" bench, which no bar can weigh. In Uppies, barbell prescriptions floor at your configured bar weight — the empty bar is the lightest set there is — and progression resumes from the bar.</li>
     </ul>
 
     <h2>The week</h2>
