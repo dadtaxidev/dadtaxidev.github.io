@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Quick answers to common Uppies questions: progression, logging, backups, profiles, timers, the widget, and privacy.">
+  <link rel="canonical" href="https://dadtaxidev.com/uppies/docs/faq/">
+  <title>FAQ &amp; troubleshooting — Uppies Docs</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Rubik:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+  <link rel="icon" href="../../../icon-512.png">
+  <link rel="apple-touch-icon" href="../../../apple-touch-icon.png">
+  <link rel="stylesheet" href="../../../site.css">
+</head>
+<body>
+  <header class="site">
+    <a class="wordmark" href="../../../">dadtaxidev</a>
+    <nav aria-label="Site">
+      <a href="../../">Uppies</a>
+      <a href="../">Docs</a>
+      <a href="../../support/">Support</a>
+    </nav>
+  </header>
+
+  <main class="doc">
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <a href="../../">Uppies</a><span aria-hidden="true">›</span><a href="../">Docs</a><span aria-hidden="true">›</span>FAQ &amp; troubleshooting
+    </nav>
+    <p class="eyebrow">Quick answers</p>
+    <h1>FAQ &amp; troubleshooting</h1>
+    <p class="lede">Short answers to the questions we hear most — about progression, logging, backups, profiles, timers, and privacy.</p>
+
+    <h2>Weights &amp; progression</h2>
+
+    <h3>Why didn't my weight go up?</h3>
+    <p>Reps you type are a <strong>draft</strong> until you check off the final working set. Progression only reads a result once that last set's checkbox is confirmed — until then the exercise is still "pending" and the next occurrence keeps its old weight.</p>
+    <p>This is deliberate: you can revise a rep count mid-session, or log a workout after the fact, and nothing moves until you say the session actually happened. Check the box on the final set and the blue "Next working weight" line updates immediately.</p>
+
+    <h3>Why did next session's weight suddenly change?</h3>
+    <p>You probably edited a past session. Every prescribed weight is recomputed from your full history, so correcting a rep count from three weeks ago rewrites every later occurrence of that lift — the same way fixing a cell in a spreadsheet re-evaluates everything that references it.</p>
+    <p>The app tells you when this happens: right after the edit, an orange caption appears under the lift, like <strong>Rewrote next Bench: 102.5 lb → 105 lb</strong>, showing the old and new weight. The blue line above it always shows the current value.</p>
+
+    <h3>I entered 0 reps — why did the weight drop?</h3>
+    <p>An explicit <strong>0 counts as a failure</strong>, so the lift deloads. A <strong>blank</strong> entry means "not done yet" — the app projects the weight forward for planning and changes nothing.</p>
+    <div class="note">
+      <span class="label">Good to know</span>
+      <p>The original spreadsheet treats 0 the same as a success and adds weight. That's fine for an untouched future column, but wrong for a set where you genuinely got zero reps — so Uppies deliberately splits the two. It's the one place the app knowingly disagrees with the sheet.</p>
+    </div>
+
+    <h3>What does the "Welcome back" prompt do?</h3>
+    <p>After a training layoff, the Workout tab offers to ease you back in. What it offers depends on how long you were away:</p>
+    <ul>
+      <li><strong>7–13 days:</strong> return each lift to its last successfully completed weight.</li>
+      <li><strong>14–29 days:</strong> reduce weights by 10% or 15%.</li>
+      <li><strong>30+ days:</strong> reduce weights by 20% or 25%.</li>
+    </ul>
+    <p>It asks <strong>once per layoff, per profile</strong>. Choosing <span class="ui">Keep Current Weights</span> loses nothing — it just records your answer so the same layoff doesn't ask again (a longer gap, or a fresh workout followed by a new gap, re-arms it). The offer can <strong>never raise a weight</strong>: any lift where the "reduced" number wouldn't actually be lower is left alone. Normal progression resumes from whatever you choose.</p>
+
+    <h3>What happens when I switch between lb and kg?</h3>
+    <p>Everything converts: starting weights, increments, rounding, warm-up rounding, and the bar itself. Each converted number is snapped to the destination unit's plate grid (2.5 lb or 1.25 kg by default), which is why values land on liftable numbers instead of 45.36 kg. The default bars round-trip exactly — 45 lb ↔ 20 kg.</p>
+    <p>You can switch back any time. Because of the grid snapping, an arbitrary weight may land one small step off after a round trip — the price of never prescribing a weight you can't load.</p>
+
+    <h3>My gym's bar isn't 45 lb / 20 kg. Can I change it?</h3>
+    <p>Yes — <span class="ui">Settings → Units → Bar weight</span>. Warm-ups never go below the bar, and the plate breakdown builds from it, so a 35 lb women's bar or a 15 lb technique bar changes both. Set it once and forget it.</p>
+
+    <h3>What does "Reset after repeated failures" do?</h3>
+    <p>Off (the default), every missed target immediately drops the weight 10%, exactly like the spreadsheet. On (<span class="ui">Settings → Progression</span>), a miss instead <strong>repeats the same weight</strong> for another attempt, and only after the set number of consecutive misses (2–5, default 3) does the weight drop — to 90% of your best <strong>successful</strong> weight, not wherever the misses left you.</p>
+
+    <h3>Deadlift only has one working set — is that a bug?</h3>
+    <p>No, that's the program. Deadlift is a single AMRAP set ("5+") with warm-ups before it; every other lift gets two straight sets plus the AMRAP. Your lower back thanks the program's author.</p>
+
+    <h3>Can I change rep targets or increments per lift?</h3>
+    <p>Yes. Tap any lift in <span class="ui">Settings</span> to adjust its starting weight, increment, rep target, and rounding independently. Accessory lifts also show a rep-target stepper right on the Settings list. The footer under each lift's controls restates its progression rule using your own numbers.</p>
+
+    <h2>Logging</h2>
+
+    <h3>Why did some warm-up sets disappear?</h3>
+    <p>Warm-ups are percentages of the working weight, clamped between the bar and the working weight. When the working weight is light, several percentages would all land at (or above) the working weight — sets like that add fatigue without providing a ramp, so the app omits any warm-up that isn't actually lighter than the work sets. They come back as the weight climbs.</p>
+
+    <h3>What counts toward volume and rep totals?</h3>
+    <p>Only <strong>confirmed</strong> sets. An exercise's "Loaded volume" and "Total reps" show dashes until you check off its final working set; then the app records what you actually did, at the weights shown when each set was checked. Loaded sets contribute weight × reps; bodyweight sets (like an unloaded Ab Rollout) contribute reps but no loaded volume.</p>
+    <p>Totals are captured at completion, so later settings changes don't quietly rewrite your history.</p>
+
+    <h3>Why is a 1RM estimate orange?</h3>
+    <p>Estimated 1RMs on the Progress tab use the Brzycki formula, which loses accuracy above 12 reps. Points from sets over 12 reps are drawn in orange as a "take this one with a grain of salt" flag — the note under the chart says the same. The trend is still useful; the exact number less so.</p>
+
+    <h2>Data &amp; backups</h2>
+
+    <h3>How do I move to a new phone (or restore a backup)?</h3>
+    <p>On the old device: <span class="ui">Settings → Data → Export backup…</span> and save the file somewhere that travels — iCloud Drive, AirDrop, email to yourself. On the new device: <span class="ui">Settings → Data → Import backup…</span>.</p>
+    <p>Each backup file holds <strong>one profile</strong> — its settings, full training history, and place in the program. Importing <strong>replaces the active profile's data</strong> (the app confirms with <span class="ui">Replace current program?</span> first), so on a shared device switch to the right profile before importing, and export one file per profile when migrating.</p>
+
+    <h3>Are backups automatic?</h3>
+    <p>No. Uppies keeps a rolling on-device safety copy to survive a corrupt write, but nothing leaves the device on its own — there is no cloud sync yet. <strong>Export a backup before deleting or reinstalling the app</strong>; deleting the app deletes its data permanently.</p>
+
+    <h3>What does "Reset all progress" clear?</h3>
+    <p>Your logged reps for the active profile. Your settings — starting weights, increments, units, everything in Settings — stay put. It's the "start the program over from my current numbers" button, and it asks for confirmation first.</p>
+
+    <h2>Profiles</h2>
+
+    <h3>If I delete a profile, is it really gone?</h3>
+    <p>Yes. Deleting a profile removes its settings, its entire training history, <strong>and</strong> the on-device safety copies of that profile's data. The confirmation dialog means it when it says this can't be undone. If there's any doubt, export a backup first. (The app won't let you delete the last remaining profile.)</p>
+
+    <h3>Do profiles share anything?</h3>
+    <p>Training-wise, nothing. Each profile keeps its own settings, units, history, and progress on this device — your deload doesn't touch your kid's bench. The only shared things are device-level preferences: appearance and the rest-timer settings.</p>
+
+    <h3>What is Workout Together?</h3>
+    <p>Two lifters, one phone, one gym trip. From the profile menu on the Workout tab, choose <span class="ui">Workout Together…</span> and pick a partner. A switcher appears with both names; tap to flip between each person's session, and each name shows their rest-timer status live ("· 1:23" or "· Ready"). Rest timers and rest notifications run independently per person, so one lifter's rest ending never cuts the other's short. <span class="ui">End Workout Together</span> hands the phone back to its owner's profile.</p>
+
+    <h2>Timers, widget &amp; notifications</h2>
+
+    <h3>The rest timer didn't notify me.</h3>
+    <p>Two things need to be on:</p>
+    <ul>
+      <li><span class="ui">Settings → Rest timer → Notify when rest ends</span> — off by default.</li>
+      <li>Notification permission for Uppies in iOS Settings. If it's denied, the app offers <span class="ui">Open Settings</span> to fix it.</li>
+    </ul>
+    <p>Even without notifications, timers still count down inside the app — the notification only matters when the app is in the background or the phone is locked.</p>
+
+    <h3>Why didn't the timer start after my last set?</h3>
+    <p>By design. The rest timer starts when you check off a warm-up or working set, <strong>except the last set of each exercise</strong> — after the final set you're moving on, not resting for a repeat. Unchecking a set doesn't start one either.</p>
+
+    <h3>Can I change how long the rest timer runs?</h3>
+    <p>Yes — <span class="ui">Settings → Rest timer</span> has separate durations for warm-up rest (default 1:00) and working-set rest (default 4:00), each adjustable from 0:30 to 5:00 in 15-second steps. The whole timer can also be switched off there.</p>
+
+    <h3>The widget shows old data.</h3>
+    <p>The widget shows your next session and refreshes whenever the app saves a change — logging a set, switching profiles, editing settings. It has no timer of its own, so it's exactly as current as your data. If it looks stale, open the app once; if you just finished logging, glance at it after the session and it should already match.</p>
+
+    <h2>Privacy</h2>
+
+    <h3>Does Uppies need an account or an internet connection?</h3>
+    <p>No and no. There's nothing to sign up for, nothing to sign in to, and the app works fine in a basement gym with no signal. All your data lives on your device.</p>
+
+    <h3>What data leaves my device?</h3>
+    <p>Nothing. No analytics, no ads, no tracking, no server. The only way training data ever leaves the device is a backup file you explicitly export and choose where to send. See the <a href="../../privacy/">privacy policy</a> for the formal version.</p>
+
+    <hr class="barbell" aria-hidden="true">
+    <p style="text-align:center; color:var(--ink-soft);">
+      Still stuck? <a href="../../support/">Email support</a>.</p>
+  </main>
+
+  <footer>
+    <nav aria-label="Footer">
+      <a href="../../">Uppies</a>
+      <a href="../">Docs</a>
+      <a href="../../privacy/">Privacy Policy</a>
+    </nav>
+    © 2026 dadtaxidev
+  </footer>
+</body>
+</html>

@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="How Greyskull LP works in Uppies: the 3-day week, the AMRAP final set, progression and deload rules, warm-ups, starting weights, and coming back after a break.">
+  <link rel="canonical" href="https://dadtaxidev.com/uppies/docs/the-program/">
+  <title>The program — Uppies Docs</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Rubik:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+  <link rel="icon" href="../../../icon-512.png">
+  <link rel="apple-touch-icon" href="../../../apple-touch-icon.png">
+  <link rel="stylesheet" href="../../../site.css">
+</head>
+<body>
+  <header class="site">
+    <a class="wordmark" href="../../../">dadtaxidev</a>
+    <nav aria-label="Site">
+      <a href="../../">Uppies</a>
+      <a href="../">Docs</a>
+      <a href="../../support/">Support</a>
+    </nav>
+  </header>
+
+  <main class="doc">
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <a href="../../">Uppies</a><span aria-hidden="true">›</span><a href="../">Docs</a><span aria-hidden="true">›</span>The program
+    </nav>
+    <p class="eyebrow">The method</p>
+    <h1>The program</h1>
+    <p class="lede">Everything Uppies prescribes — weights, warm-ups, deloads — comes from the Greyskull LP rules on this page.</p>
+
+    <h2>What Greyskull LP is</h2>
+    <p>Greyskull LP is a <strong>linear progression</strong> program: you train three days a week, and every time you hit your rep target on a lift, the next session prescribes a little more weight. It's built for novice and early-intermediate lifters — the stage where you can still add weight almost every session, so the fastest way to get strong is simply to keep showing up and letting the numbers climb.</p>
+    <p>Uppies is a faithful port of the <strong>Greyskull Linear Progression Program (2020 v2.1)</strong> spreadsheet from LiftVault. Faithful is not a figure of speech: the app's calculation engine was verified against the source workbook cell for cell, reproducing all 272 computed working weights and warm-ups across the sheet's 24 sessions exactly.</p>
+    <p>The app knowingly departs from the spreadsheet in only a couple of places, both bug fixes:</p>
+    <ul>
+      <li><strong>Blank is not zero.</strong> The sheet treats an empty rep cell and a logged 0 identically — both add weight. In Uppies, <strong>no entry</strong> just projects the weight forward for planning, while <strong>an explicitly logged 0</strong> counts as a failure and deloads. A session you haven't done yet and a session where you got zero reps are not the same thing.</li>
+      <li><strong>Bicep Curl reads its own rep target.</strong> The sheet's curl formula compares your reps against the Tricep Extension's target — a copy-paste bug that's invisible only because both default to 12. Uppies fixes it.</li>
+    </ul>
+
+    <h2>The week</h2>
+    <p>Each session works five blocks: <strong>Press</strong>, <strong>Pull</strong>, <strong>Legs</strong>, <strong>Arms</strong>, and <strong>Core</strong>. Each block rotates between two lifts, but on two different schedules:</p>
+    <ul>
+      <li><strong>Press, Pull, and Arms alternate every session</strong> — A/B/A one week, B/A/B the next. That's what produces the classic Greyskull pattern of benching three times one week and pressing three times the next.</li>
+      <li><strong>Legs and Core rotate weekly</strong> — the second lift always lands on day 2, so you deadlift (and shrug) once a week, on the middle day.</li>
+    </ul>
+    <p>Here are the first two weeks in full. The pattern repeats from week 3.</p>
+    <table>
+      <tr><th>Session</th><th>Press</th><th>Pull</th><th>Legs</th><th>Arms</th><th>Core</th></tr>
+      <tr><td>Week 1, Day 1</td><td>Bench</td><td>Row</td><td>Squat</td><td>Tricep Ext.</td><td>Ab Rollout</td></tr>
+      <tr><td>Week 1, Day 2</td><td>OHP</td><td>Chin-up</td><td>Deadlift</td><td>Bicep Curl</td><td>Shrug</td></tr>
+      <tr><td>Week 1, Day 3</td><td>Bench</td><td>Row</td><td>Squat</td><td>Tricep Ext.</td><td>Ab Rollout</td></tr>
+      <tr><td>Week 2, Day 1</td><td>OHP</td><td>Chin-up</td><td>Squat</td><td>Bicep Curl</td><td>Ab Rollout</td></tr>
+      <tr><td>Week 2, Day 2</td><td>Bench</td><td>Row</td><td>Deadlift</td><td>Tricep Ext.</td><td>Shrug</td></tr>
+      <tr><td>Week 2, Day 3</td><td>OHP</td><td>Chin-up</td><td>Squat</td><td>Bicep Curl</td><td>Ab Rollout</td></tr>
+    </table>
+    <p>That's ten lifts in all: Bench, OHP, Squat, Deadlift, Row, Chin-up, Tricep Extension, Bicep Curl, Ab Rollout, and Shrug. Each lift progresses on its own chain — Bench's weight depends only on how Bench went last time, never on how OHP is doing.</p>
+
+    <h2>Sets and the AMRAP final set</h2>
+    <p>Every lift uses the same shape: straight sets at the rep target, then a final set where you do <strong>as many reps as possible</strong> (AMRAP) — shown in the app as "5+" or "12+".</p>
+    <table>
+      <tr><th>Lifts</th><th>Working sets</th></tr>
+      <tr><td>Bench, OHP, Squat, Row, Chin-up</td><td>2 × 5, then 1 × 5+</td></tr>
+      <tr><td>Deadlift</td><td>1 × 5+ only</td></tr>
+      <tr><td>Tricep Ext., Bicep Curl, Ab Rollout, Shrug</td><td>2 × 12, then 1 × 12+</td></tr>
+    </table>
+    <p>The deadlift really is a single all-out set — one heavy pull a week is plenty of lower-back work on top of three squat days.</p>
+    <p><strong>The final set drives everything.</strong> Only the AMRAP set's reps are read by the progression rules; the earlier straight sets are logged but never feed a formula. That's the genius of the design: the last set is a built-in test of whether the weight is still easy, and how far past the target you push it determines whether you progress normally, jump ahead, or back off. Leave nothing in the tank on that set.</p>
+    <div class="note"><span class="label">Good to know</span><p>Reps you type stay a draft until you check off the final working set. Progression only uses confirmed results — see <a href="../using-the-app/">Using the app</a> for how logging works.</p></div>
+
+    <h2>Progression rules</h2>
+    <p>Main lifts (Bench, OHP, Squat, Deadlift, Row, Chin-up) and accessories (Tricep Extension, Bicep Curl, Ab Rollout, Shrug) follow different rules.</p>
+    <h3>Main lifts</h3>
+    <p>Compare the final set's reps to the target (default 5). Meet it and the weight goes up by the lift's increment. Reach <strong>double</strong> the target and it goes up by twice the increment. Miss it and the weight drops 10%. With Bench at 100 lb, a 2.5 lb increment, and a target of 5:</p>
+    <table>
+      <tr><th>Final-set reps</th><th>Rule</th><th>Next Bench session</th></tr>
+      <tr><td>4 (miss)</td><td>× 0.9 deload</td><td>90 lb</td></tr>
+      <tr><td>5–9 (met)</td><td>+ increment</td><td>102.5 lb</td></tr>
+      <tr><td>10 or more (double)</td><td>+ 2 × increment</td><td>105 lb</td></tr>
+    </table>
+    <p>Every result is snapped to the lift's rounding (2.5 lb or 1.25 kg by default), so prescriptions always land on weights you can actually load.</p>
+    <h3>Accessories</h3>
+    <p>Accessories use a <strong>dead band</strong> of the target ± 2 instead of a single pass/fail line. With a target of 12, anything from 10 to 14 reps holds the weight. Above the band adds the increment; below it drops 10%. Bicep Curl at 25 lb:</p>
+    <table>
+      <tr><th>Final-set reps</th><th>Rule</th><th>Next Curl session</th></tr>
+      <tr><td>9 or fewer</td><td>× 0.9 deload</td><td>22.5 lb</td></tr>
+      <tr><td>10–14</td><td>hold</td><td>25 lb</td></tr>
+      <tr><td>15 or more</td><td>+ increment</td><td>27.5 lb</td></tr>
+    </table>
+    <p>The band means a slightly-off day on a high-rep accessory doesn't cost you weight — accessories climb when they're clearly easy and only back off when they're clearly hard.</p>
+
+    <h2>Failures and deloads</h2>
+    <p>By default, Uppies handles a missed target exactly like the spreadsheet: the weight drops 10% (then snaps to the lift's rounding), and you build back up. Because the AMRAP set lets you overshoot on the way back, you typically return to your old ceiling with more reps in hand — that's the program self-correcting, not a setback.</p>
+    <p>There's also an optional <span class="ui">Reset after repeated failures</span> rule in <span class="ui">Settings → Progression</span>, off by default so the app matches the sheet out of the box. Turned on:</p>
+    <ul>
+      <li>A missed target <strong>repeats the same weight</strong> next time, giving you another attempt instead of retreating immediately.</li>
+      <li>After a set number of consecutive misses (<span class="ui">Failures before reset</span>, default 3), the weight drops to <strong>90% of your best successful weight</strong> — a deliberate reset from a known-good anchor, rather than 10% off wherever the misses left you.</li>
+    </ul>
+    <p>Turn it on if repeated 10% cuts feel like a slow bleed — the classic Greyskull prescription is in fact to reset only after about three straight failures, a rule the spreadsheet never implemented. Leave it off if you want strict sheet behavior.</p>
+    <div class="note warn"><span class="label">Careful</span><p>An explicitly logged <strong>0 reps counts as a failure</strong> and deloads. If you skipped a lift entirely, leave its reps blank instead — a blank projects the same weight forward for next time.</p></div>
+
+    <h2>Warm-ups</h2>
+    <p>Presses and lower-body lifts get ramp-up sets computed from the day's working weight. Pulls, arms, and core have none.</p>
+    <table>
+      <tr><th>Block</th><th>Warm-up sets</th></tr>
+      <tr><td>Press (Bench, OHP)</td><td>bar × 5, 55% × 4, 70% × 3, 85% × 2</td></tr>
+      <tr><td>Legs (Squat, Deadlift)</td><td>40% × 5, 55% × 4, 70% × 3, 85% × 2</td></tr>
+      <tr><td>Pull, Arms, Core</td><td>none</td></tr>
+    </table>
+    <p>Each percentage is <strong>floored</strong> to the warm-up rounding (5 lb or 2.5 kg by default) — rounded down, never up, so a warm-up can't creep above where it should be. Benching 145 lb: bar × 5, then 75 × 4 (55% is 79.75, floored to 75), 100 × 3, 120 × 2.</p>
+    <p>Two guardrails shape the list at the extremes:</p>
+    <ul>
+      <li><strong>Nothing below the bar.</strong> A computed warm-up lighter than the empty bar is clamped up to bar weight. Your bar weight (and the warm-up rounding) is adjustable in <span class="ui">Settings → Units</span> if your rack holds a 35 lb women's bar or a technique bar.</li>
+      <li><strong>Nothing at or above the working weight.</strong> A warm-up that clamps all the way up to the working weight adds fatigue without providing a lighter ramp, so it's omitted. That's why warm-ups thin out — or disappear entirely — when your working weight is at or near the empty bar: there's nothing lighter to ramp with yet. They reappear on their own as the weight climbs.</li>
+    </ul>
+
+    <h2>Choosing starting weights</h2>
+    <p>Start humbler than your ego wants. The program adds weight every session, so a light start costs you a week or two of easy wins; a heavy start costs you a deload spiral in week three.</p>
+    <p>Uppies suggests conservative defaults for each lift when you set up: an empty bar (45 lb / 20 kg) for Squat, Bench, and OHP; a lightly loaded bar that can rest on the floor for Deadlift (95 lb / 40 kg) and Row (65 lb / 30 kg); an empty bar for Shrug; the smallest common dumbbell (5 lb / 2.5 kg) for curls and tricep extensions; and plain bodyweight for Chin-up and Ab Rollout.</p>
+    <p>Entering your own number instead? The app's guidance: pick a weight you could manage for about <strong>8–10 good reps today</strong>. That leaves the first sessions comfortably below your limit while the progression catches up to you.</p>
+    <h3>The starting weight calculator</h3>
+    <p>If you've trained before and remember a recent hard set, the <span class="ui">Starting weight calculator</span> (in <span class="ui">Settings</span>, and offered per lift during onboarding) works out a start for you:</p>
+    <ol>
+      <li>Enter the weight and reps (1–12) of a recent hard set. The app estimates your <strong>1-rep max</strong> from published conversion tables.</li>
+      <li>It takes <strong>90%</strong> of that as your training max — the number you can hit on any given day, not just your best day.</li>
+      <li>Your starting weight is <strong>70% of the training max</strong>.</li>
+    </ol>
+    <p>Example: you recently benched 135 lb for 8 reps. Estimated 1RM ≈ 175 lb, training max 157.5 lb, starting weight <strong>110 lb</strong>. That feels almost insultingly light on day one — it's supposed to. The app itself says so about accessories too: don't use the calculator for them; start those light and let them climb.</p>
+
+    <h2>Bodyweight movements</h2>
+    <p>Chin-ups and ab rollouts are bodyweight movements, so the weight Uppies tracks for them is <strong>added</strong> weight — plates on a belt, a dumbbell between the feet — and legitimately starts at nothing.</p>
+    <ul>
+      <li><strong>Chin-up</strong> follows the main-lift rule. Start unloaded; the sets are rep-only. Once bodyweight chins are comfortably beating the target, give the lift a starting weight in <span class="ui">Settings</span> (even 2.5 lb) and it progresses like any other main lift from there.</li>
+      <li><strong>Ab Rollout</strong> is an accessory and typically stays unloaded — its default increment is 0, so it holds as a pure rep movement.</li>
+    </ul>
+    <p>Unloaded sets still count. Every confirmed rep goes into your total-rep counts on the Progress tab; what unloaded work doesn't contribute is <strong>loaded volume</strong>, since there's no external weight to multiply. Ten bodyweight chins are ten reps in the book, and zero pounds moved — both statements are true, and the app records both honestly.</p>
+
+    <h2>Coming back after a break</h2>
+    <p>Life happens — a sick kid, a work crunch, a vacation. When you return after a week or more away, Uppies offers to ease your weights back down before the next session, scaled to how long you were gone:</p>
+    <table>
+      <tr><th>Time away</th><th>Offer</th></tr>
+      <tr><td>7–13 days</td><td>Return each lift to its last successfully completed weight</td></tr>
+      <tr><td>14–29 days</td><td>Reduce weights by 10% or 15%</td></tr>
+      <tr><td>30+ days</td><td>Reduce weights by 20% or 25%</td></tr>
+    </table>
+    <p>The offer appears once per layoff per profile, and it only ever moves weights <strong>down</strong> — declining it just resumes where you left off. Accepting rebases each lift at the reduced weight; earlier history keeps the weights you actually lifted, and normal progression resumes immediately, with any failure streak wiped clean.</p>
+    <p>Why ease back instead of grinding? Detraining is real but shallow — the strength returns much faster than it was built. Coming back 10–25% light turns your first sessions into easy AMRAP wins that march the weight right back up, instead of missed targets that trigger deloads on top of rust. Two weeks of "too easy" beats one session of "why is the bar winning."</p>
+
+    <hr class="barbell" aria-hidden="true">
+    <p style="text-align:center; color:var(--ink-soft);">
+      Still stuck? <a href="../../support/">Email support</a>.</p>
+  </main>
+
+  <footer>
+    <nav aria-label="Footer">
+      <a href="../../">Uppies</a>
+      <a href="../">Docs</a>
+      <a href="../../privacy/">Privacy Policy</a>
+    </nav>
+    © 2026 dadtaxidev
+  </footer>
+</body>
+</html>

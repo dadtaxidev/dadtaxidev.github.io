@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A screen-by-screen handbook for Uppies: logging workouts,
+    rest timers, editing history, profiles, progress charts, settings, and backups.">
+  <link rel="canonical" href="https://dadtaxidev.com/uppies/docs/using-the-app/">
+  <title>Using the App — Uppies Docs</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Rubik:ital,wght@0,400..700;1,400..700&display=swap"
+    rel="stylesheet">
+  <link rel="icon" href="../../../icon-512.png">
+  <link rel="apple-touch-icon" href="../../../apple-touch-icon.png">
+  <link rel="stylesheet" href="../../../site.css">
+</head>
+<body>
+  <header class="site">
+    <a class="wordmark" href="../../../">dadtaxidev</a>
+    <nav aria-label="Site">
+      <a href="../../">Uppies</a>
+      <a href="../">Docs</a>
+      <a href="../../support/">Support</a>
+    </nav>
+  </header>
+
+  <main class="doc">
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <a href="../../">Uppies</a><span aria-hidden="true">›</span><a href="../">Docs</a><span
+        aria-hidden="true">›</span>Using the App
+    </nav>
+    <p class="eyebrow">Handbook</p>
+    <h1>Using the App</h1>
+    <p class="lede">Every screen in Uppies, in the order you'll meet them — from first launch to
+      backing up months of training.</p>
+
+    <h2>First run: the setup guide</h2>
+    <p>The first time you open Uppies, a short setup guide walks you through everything the
+      program needs. Nothing in it is final — every choice can be changed later in <span
+      class="ui">Settings</span>.</p>
+    <ul>
+      <li><strong>Profile name.</strong> Optional, but worth setting if two people will share
+        the device. Leave it blank to stay "Me".</li>
+      <li><strong>Units.</strong> Pounds or kilograms. Switching converts the profile's weights
+        and rounding values for you, so it's safe to change your mind later.</li>
+      <li><strong>Starting weights.</strong> For each of the ten lifts you can tap the checkbox
+        to accept the suggested weight, or open the lift to enter a weight directly or estimate
+        one from a recent hard set (you enter the weight and reps; Uppies works back through an
+        estimated 1RM to a deliberately conservative starting point).</li>
+    </ul>
+    <div class="note"><span class="label">Good to know</span><p>The guide is resumable. Tap
+      <span class="ui">Skip</span> at any point and the unreviewed lifts simply use their
+      suggested values — a "Review starting weights" card appears on the Workout screen, and
+      <span class="ui">Settings → Finish setup guide</span> reopens the walkthrough right where
+      it matters. Not sure what to pick? Start lighter than your ego suggests; the program
+      catches up fast.</p></div>
+
+    <h2>The Workout screen</h2>
+    <p>The Workout tab shows one session at a time, with one card per lift. Each card has the
+      lift's name, an info button for its movement guide, and the working weight for today in
+      the header.</p>
+    <h3>Set rows</h3>
+    <p>Below the header, each prescribed set gets its own row — warm-up sets first (for bench,
+      overhead press, squat, and deadlift), then the working sets — each with a checkbox. Check
+      a set off as you finish it. Main lifts prescribe two straight sets of 5 and a final "5+"
+      set; the deadlift is the exception with a single "5+" working set; accessories prescribe
+      two sets of 12 and a final "12+".</p>
+    <h3>The reps stepper</h3>
+    <p>The final working set is an AMRAP — as many reps as you can with good form. Enter what
+      you got with the <span class="ui">Reps on last set</span> stepper. The minus and plus
+      buttons step the count, and it starts as a dash, not zero: "no entry" and "zero reps" mean
+      different things in Uppies. Long-press the stepper to clear an entry entirely.</p>
+    <h3>Draft vs. confirmed — the one concept worth learning</h3>
+    <p>Reps you enter are a <strong>draft</strong> until you check the final set's checkbox.
+      Only a confirmed final set counts as a result, and only then does progression read it.</p>
+    <p>Concretely: say your bench is at 100 lb with a 5-rep target. You grind out 7 reps and tap
+      the stepper up to 7. At this point nothing has changed — the outcome row stays blank and
+      next session's bench is still whatever it was. Check the final set's box and it becomes
+      official: the card shows <strong>Target Met</strong> and the next bench weight becomes
+      102.5 lb. Realize you miscounted and change the 7 to a 6? The checkbox clears itself, the
+      result goes back to being a draft, and you confirm again when you're sure.</p>
+    <p>The checkbox on the final set stays disabled until you've entered reps — you can't
+      confirm a result that doesn't exist yet.</p>
+    <h3>Outcomes and the next weight</h3>
+    <p>Once confirmed, the card labels the result:</p>
+    <table>
+      <tr><th>Label</th><th>Meaning (main lifts)</th><th>Next weight</th></tr>
+      <tr><td><strong>Target Met</strong></td><td>Hit the target, short of double</td><td>+ one
+        increment</td></tr>
+      <tr><td><strong>2x Target Met</strong></td><td>At least double the target</td><td>+ two
+        increments</td></tr>
+      <tr><td><strong>Target Not Met</strong></td><td>Below the target</td><td>Deload (10% by
+        default)</td></tr>
+    </table>
+    <p>Accessories work slightly differently — a ±2-rep band around the target holds the weight
+      steady. The full rules live in <a href="../the-program/">The program</a>.</p>
+    <p>A blue <span class="ui">Next working weight</span> line on every card always shows what
+      that lift is prescribed at its next occurrence — met, missed, or still unlogged.</p>
+    <h3>Volume and rep totals</h3>
+    <p>Each card ends with a <span class="ui">Loaded volume</span> and <span class="ui">Total
+      reps</span> row, and the bottom of the session sums them across every lift. Both count
+      only sets you've actually checked off, and they finalize when you confirm the exercise's
+      last working set — until then the card shows dashes. Totals are captured at completion, so
+      a settings tweak next month won't quietly rewrite what you lifted today. Unloaded
+      bodyweight sets (chin-ups or ab rollouts with no added weight) contribute reps but no
+      loaded volume.</p>
+
+    <h2>Rest timers</h2>
+    <p>Checking off a warm-up or working set starts a rest countdown in the bar at the top of
+      the Workout screen — except the last set of an exercise, because you're done with that
+      lift, not resting for it. Warm-ups and working sets have separate durations: 1:00 and 4:00
+      by default, each adjustable from 0:30 to 5:00 in <span class="ui">Settings → Rest
+      timer</span>.</p>
+    <ul>
+      <li>While a timer runs, <span class="ui">+15s</span> and <span class="ui">−15s</span>
+        buttons nudge it, and the ring around the start/stop button drains as rest elapses.</li>
+      <li>When time is up the bar shows <strong>Rest over</strong> and stays put until you
+        dismiss it or check off another set — no vanishing message to miss
+        mid-conversation.</li>
+      <li>Turn on <span class="ui">Notify when rest ends</span> to get a notification even if
+        you've switched apps or locked the phone. It's off by default and asks for notification
+        permission when enabled.</li>
+      <li>Don't want timers at all? The <span class="ui">Rest timer</span> toggle removes the
+        bar entirely.</li>
+    </ul>
+
+    <h2>Navigating sessions and editing history</h2>
+    <p>The chevrons in the toolbar move one session back or forward, and the <span
+      class="ui">Next session</span> button at the bottom of the workout does the same as the
+      forward chevron. On iPhone, tap the <span class="ui">Week 2, Day 1</span> title to open
+      <span class="ui">History</span> — a week-by-week list of every session so far, with a
+      one-line summary of what you logged (like "Bench 102.5×5 · Row 52.5×6"), its totals, a
+      green checkmark when complete, and the date. On an iPad in full screen, History lives in
+      an always-visible sidebar instead. Tap any row to jump there.</p>
+    <p>If you try to advance past a session that still has unlogged lifts, Uppies asks first:
+      <span class="ui">Advance incomplete session?</span>. That's because an unlogged lift
+      projects its weight forward as if it went fine — advancing anyway is allowed, but it can
+      raise future prescriptions for work you never did.</p>
+    <h3>Editing a past session</h3>
+    <p>Any old session can be corrected: navigate to it, fix the reps, and re-confirm the final
+      set. Because every weight is recomputed from the log, fixing a three-week-old typo
+      correctly rewrites every later occurrence of that lift. When an edit actually changes an
+      upcoming weight, the card shows an orange caption so the change never happens silently —
+      for example <span class="ui">Rewrote next Bench: 102.5 lb → 105 lb</span> — right under
+      the blue next-weight line, which already shows the new value.</p>
+
+    <h2>Profiles and Workout Together</h2>
+    <p>Profiles let several people train on one device with completely separate settings,
+      history, progress, and preferences. Manage them from <span class="ui">Settings → Profile →
+      Manage Profiles</span>: create with <span class="ui">New Profile</span>, and rename or
+      delete from each row's menu. Deleting removes that profile's settings and training history
+      for good, and the last remaining profile can't be deleted. A brand-new profile is offered
+      its own starting-weight setup.</p>
+    <p>Switch profiles from that same Settings picker, or from the profile menu in the Workout
+      screen's toolbar.</p>
+    <h3>Workout Together</h3>
+    <p>Training with someone at the same time? Open the profile menu on the Workout screen and
+      choose <span class="ui">Workout Together…</span> (with only one profile on the device
+      you'll see <span class="ui">Add a Partner…</span> instead). Pick a partner and tap <span
+      class="ui">Start</span>. A participant bar appears above the session; tap a name to switch
+      whose workout is on screen. Each name shows that lifter's own rest countdown — "Sam ·
+      1:23" or "Sam · Ready" — because each participant keeps an independent timer, along with
+      their own session, weights, history, and totals. Nothing is ever mixed. Tap the X in the
+      bar (or <span class="ui">End Workout Together</span> in the menu) when you're done.</p>
+
+    <h2>The Progress tab</h2>
+    <p>Progress has two views, switched at the top.</p>
+    <h3>Overview</h3>
+    <p><span class="ui">Overview</span> shows whole-program numbers: cards for all-time volume,
+      total reps, completed sessions, and the latest session's volume, plus <span
+      class="ui">Volume by session</span> and <span class="ui">Reps by session</span> bar
+      charts. Like the in-workout totals, these count only confirmed work — a session you
+      half-logged and abandoned doesn't inflate your history.</p>
+    <h3>By Lift</h3>
+    <p><span class="ui">By Lift</span> focuses on one of the six main lifts (accessories aren't
+      charted — they hold weight by design, so their trend line would just be flat). You get
+      summary cards and two charts: <span class="ui">Working weight</span> over time, and <span
+      class="ui">Estimated 1RM</span> computed from each confirmed AMRAP set using the Brzycki
+      formula. Estimates from sets above 12 reps are drawn as larger orange points — the formula
+      loses accuracy up there, so treat those as rough. A note below the chart explains the
+      orange points whenever any appear.</p>
+
+    <h2>Plate calculator and movement guides</h2>
+    <p>Tap any set row on a barbell lift and Uppies shows exactly how to load the bar: the total
+      weight, the bar itself, and each plate denomination with a per-side count. If the
+      prescribed weight can't be built from standard plates, the leftover is called out rather
+      than rounded away. The calculator uses your configured bar weight, and appears for the six
+      bar lifts — bench, overhead press, squat, deadlift, row, and shrug. Chin-ups, ab rollouts,
+      and the arm accessories don't load a full-size bar, so they don't get one.</p>
+    <p>The info button next to each lift's name opens its movement guide: <span
+      class="ui">Setup</span>, <span class="ui">Movement cues</span>, <span class="ui">Watch
+      for</span> (common mistakes), and <span class="ui">A completed rep</span> — what actually
+      counts as a rep — plus a safety note where one matters.</p>
+
+    <h2>Settings tour</h2>
+    <table>
+      <tr><th>Section</th><th>What it does</th></tr>
+      <tr><td><span class="ui">Profile</span></td><td>Switch the active profile; open <span
+        class="ui">Manage Profiles</span>.</td></tr>
+      <tr><td><span class="ui">Units</span></td><td>Pounds or kilograms — switching converts
+        every weight and rounding value. Also the adjustable <span class="ui">Bar weight</span>
+        (warm-ups and the plate calculator both read it, so a 35 lb or technique bar works fine)
+        and <span class="ui">Warm-up rounding</span>.</td></tr>
+      <tr><td><span class="ui">Appearance</span></td><td>System, Light, or Dark.</td></tr>
+      <tr><td><span class="ui">Rest timer</span></td><td>On/off, the warm-up and working-set
+        durations, and the end-of-rest notification.</td></tr>
+      <tr><td><span class="ui">Progression</span></td><td><span class="ui">Reset after repeated
+        failures</span> — off by default. On, a missed target repeats the same weight instead of
+        deloading immediately, and after your chosen number of consecutive misses (2–5) the
+        weight resets to 90% of your best successful set. See <a href="../the-program/">The
+        program</a> for the trade-off.</td></tr>
+      <tr><td>Per-lift sections</td><td>Every lift's <span class="ui">Starting weight</span>,
+        <span class="ui">Increment</span>, <span class="ui">Rep target</span>, and <span
+        class="ui">Rounding</span>, grouped by movement block. Chin-ups and ab rollouts add an
+        <span class="ui">Add weight</span> toggle for training loaded or at
+        bodyweight.</td></tr>
+      <tr><td><span class="ui">Data</span></td><td><span class="ui">Export backup…</span> and
+        <span class="ui">Import backup…</span> — see below.</td></tr>
+      <tr><td>Tools</td><td>Reopen the setup guide, the standalone <span class="ui">Starting
+        weight calculator</span> (the same estimate-from-a-recent-set math as onboarding), and
+        <span class="ui">Reset all progress</span>.</td></tr>
+    </table>
+
+    <h2>Backups</h2>
+    <p>Uppies stores everything on your device — there's no account and no cloud copy — so the
+      backup file is your safety net. <span class="ui">Settings → Data → Export backup…</span>
+      saves a single JSON file containing the active profile's settings, complete training log,
+      and current session; save it to Files, iCloud Drive, or anywhere else you keep things that
+      matter.</p>
+    <p><span class="ui">Import backup…</span> restores one. It replaces the active profile's
+      current program, so Uppies confirms — <span class="ui">Replace current program?</span> —
+      before it reads the file.</p>
+    <div class="note warn"><span class="label">Careful</span><p>Export before deleting the app,
+      before moving to a new phone, and ideally every few weeks. Backups are per profile: export
+      from each profile you want to keep. And note that <span class="ui">Reset all
+      progress</span> clears the profile's logged reps (its settings survive) — export first if
+      there's any chance you'll want that history back.</p></div>
+
+    <h2>The widget and the welcome-back offer</h2>
+    <p>Add the Uppies widget to your home screen and it shows the next session — the
+      week-and-day label and the lifts with their prescribed weights — updating whenever your
+      data changes. On a shared device it names whose session it's showing.</p>
+    <p>And if life gets in the way for a week or more, Uppies notices: a <span
+      class="ui">Welcome back</span> dialog offers to ease your working weights down before your
+      next session, scaled to how long you were away. Weights only ever move down, declining is
+      always an option, and normal progression resumes from whatever you choose. The tiers and
+      fine print are in the <a href="../faq/">FAQ</a>.</p>
+
+    <hr class="barbell" aria-hidden="true">
+    <p style="text-align:center; color:var(--ink-soft);">
+      Still stuck? <a href="../../support/">Email support</a>.</p>
+  </main>
+
+  <footer>
+    <nav aria-label="Footer">
+      <a href="../../">Uppies</a>
+      <a href="../">Docs</a>
+      <a href="../../privacy/">Privacy Policy</a>
+    </nav>
+    © 2026 dadtaxidev
+  </footer>
+</body>
+</html>
