@@ -17,10 +17,13 @@
   --ink: #23262F;
   --ink-soft: #626672;
   --line: #23262F;
-  /* the loud ones */
-  --accent: #E9531F;      /* plate orange  */
+  /* the loud ones — both chosen to clear WCAG AA (≥4.5:1) as text on paper,
+     the deeper band, and cards, AND as button/sticker backgrounds under
+     near-white text; brightening either one re-fails the eyebrows, links,
+     and buttons that were audited at these exact values */
+  --accent: #B6400E;      /* plate orange, burnt for contrast */
   --accent-soft: #FBDCCB;
-  --blue: #2C7DA0;        /* steel blue    */
+  --blue: #256A89;        /* steel blue */
   --blue-soft: #D5E8F1;
   --sun: #F4B842;         /* chalk-bucket yellow */
   --sun-soft: #FBEBC8;
