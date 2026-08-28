@@ -149,8 +149,8 @@
     <h2>Profiles and Workout Together</h2>
     <p>Profiles let several people train on one device with completely separate settings,
       history, progress, and preferences. Manage them from <span class="ui">Settings → Profile →
-      Manage Profiles</span>: create with <span class="ui">New Profile</span>, and rename or
-      delete from each row's menu. Deleting removes that profile's settings and training history
+      Manage Profiles</span>: create with <span class="ui">New Profile</span>, and rename,
+      export, or delete from each row's menu. Deleting removes that profile's settings and training history
       for good, and the last remaining profile can't be deleted. A brand-new profile is offered
       its own starting-weight setup.</p>
     <p>Switch profiles from that same Settings picker, or from the profile menu in the Workout
@@ -217,24 +217,45 @@
         <span class="ui">Add weight</span> toggle for training loaded or at
         bodyweight.</td></tr>
       <tr><td><span class="ui">Data</span></td><td><span class="ui">Export backup…</span> and
-        <span class="ui">Import backup…</span> — see below.</td></tr>
+        <span class="ui">Import backup…</span> for the active profile, plus <span
+        class="ui">Export full backup…</span> and <span class="ui">Import full backup…</span>
+        covering every profile on the device — see below.</td></tr>
       <tr><td>Tools</td><td>Reopen the setup guide, the standalone <span class="ui">Starting
         weight calculator</span> (the same estimate-from-a-recent-set math as onboarding), and
         <span class="ui">Reset all progress</span>.</td></tr>
     </table>
 
     <h2>Backups</h2>
-    <p>Uppies stores everything on your device — there's no account and no cloud copy — so the
-      backup file is your safety net. <span class="ui">Settings → Data → Export backup…</span>
-      saves a single JSON file containing the active profile's settings, complete training log,
-      and current session; save it to Files, iCloud Drive, or anywhere else you keep things that
-      matter.</p>
-    <p><span class="ui">Import backup…</span> restores one. It replaces the active profile's
+    <p>Uppies stores everything on your device — there's no account and no cloud copy — so
+      backup files are your safety net. There are three flows, and each covers a different
+      job.</p>
+    <h3>The active profile</h3>
+    <p><span class="ui">Settings → Data → Export backup…</span> saves a single JSON file
+      containing the active profile's settings, complete training log, and current session;
+      save it to Files, iCloud Drive, or anywhere else you keep things that matter. <span
+      class="ui">Import backup…</span> restores one. It replaces the active profile's
       current program, so Uppies confirms — <span class="ui">Replace current program?</span> —
       before it reads the file.</p>
+    <h3>Any profile, without replacing anything</h3>
+    <p>In <span class="ui">Settings → Profile → Manage Profiles</span>, each profile row's menu
+      has <span class="ui">Export…</span>, which produces the same kind of single-profile file
+      without switching to that profile first. The <span class="ui">Import Profile</span>
+      button there goes the other direction: it brings a single-profile file in as a
+      <strong>new</strong> profile — it never replaces an existing one. You're asked to give
+      the imported profile a name, and the name must be unique; the dialog won't proceed until
+      a name collision is resolved. This is the way to copy one lifter's data to another
+      device, or to restore a profile alongside the ones already on the phone.</p>
+    <h3>The whole device</h3>
+    <p><span class="ui">Settings → Data → Export full backup…</span> writes one file containing
+      <strong>every</strong> profile on the device. <span class="ui">Import full
+      backup…</span> restores it — and because restoring <strong>replaces all profiles on the
+      device</strong>, Uppies shows an explicit warning first, with the option to abort before
+      anything is touched.</p>
+    <p>Hand any of these importers the wrong kind of file and nothing is harmed: the import
+      fails with a clear message telling you which flow that file belongs to.</p>
     <div class="note warn"><span class="label">Careful</span><p>Export before deleting the app,
-      before moving to a new phone, and ideally every few weeks. Backups are per profile: export
-      from each profile you want to keep. And note that <span class="ui">Reset all
+      before moving to a new phone, and ideally every few weeks — a full backup captures every
+      profile in one file. And note that <span class="ui">Reset all
       progress</span> clears the profile's logged reps (its settings survive) — export first if
       there's any chance you'll want that history back.</p></div>
 

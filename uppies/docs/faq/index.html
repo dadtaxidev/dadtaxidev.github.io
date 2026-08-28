@@ -88,11 +88,14 @@
     <h2>Data &amp; backups</h2>
 
     <h3>How do I move to a new phone (or restore a backup)?</h3>
-    <p>On the old device: <span class="ui">Settings → Data → Export backup…</span> and save the file somewhere that travels — iCloud Drive, AirDrop, email to yourself. On the new device: <span class="ui">Settings → Data → Import backup…</span>.</p>
-    <p>Each backup file holds <strong>one profile</strong> — its settings, full training history, and place in the program. Importing <strong>replaces the active profile's data</strong> (the app confirms with <span class="ui">Replace current program?</span> first), so on a shared device switch to the right profile before importing, and export one file per profile when migrating.</p>
+    <p>The easy way is a full backup. On the old device: <span class="ui">Settings → Data → Export full backup…</span> — one file holding <strong>every</strong> profile on the device — and save it somewhere that travels: iCloud Drive, AirDrop, email to yourself. On the new device: <span class="ui">Settings → Data → Import full backup…</span>. Restoring <strong>replaces all profiles on that device</strong>, so the app shows an explicit warning first with the option to abort.</p>
+    <p>To move just one lifter, use a single-profile file instead. <span class="ui">Settings → Data → Export backup…</span> exports the active profile; importing it back with <span class="ui">Import backup…</span> <strong>replaces the active profile's data</strong> (the app confirms with <span class="ui">Replace current program?</span> first), so on a shared device switch to the right profile before importing. Or skip the replacing entirely: export any profile from its row's menu in <span class="ui">Settings → Profile → Manage Profiles</span>, then use <span class="ui">Import Profile</span> there to bring it in as a brand-new profile alongside the existing ones.</p>
 
     <h3>Are backups automatic?</h3>
-    <p>No. Uppies keeps a rolling on-device safety copy to survive a corrupt write, but nothing leaves the device on its own — there is no cloud sync yet. <strong>Export a backup before deleting or reinstalling the app</strong>; deleting the app deletes its data permanently.</p>
+    <p>No. Uppies keeps a rolling on-device safety copy to survive a corrupt write, but nothing leaves the device on its own — there is no cloud sync yet. <strong>Export a backup before deleting or reinstalling the app</strong> — a full backup covers every profile in one file — because deleting the app deletes its data permanently.</p>
+
+    <h3>Can I share a profile with someone else's phone?</h3>
+    <p>Yes. In <span class="ui">Settings → Profile → Manage Profiles</span>, open the profile row's menu and choose <span class="ui">Export…</span>, then send the file over (AirDrop, Messages, whatever works). On the other phone, <span class="ui">Import Profile</span> in the same screen brings it in as a <strong>new</strong> profile — nothing already on that device is touched. They'll be asked to give the imported profile a name, which has to be unique on their phone; the dialog won't proceed until it is.</p>
 
     <h3>What does "Reset all progress" clear?</h3>
     <p>Your logged reps for the active profile. Your settings — starting weights, increments, units, everything in Settings — stay put. It's the "start the program over from my current numbers" button, and it asks for confirmation first.</p>
@@ -100,7 +103,7 @@
     <h2>Profiles</h2>
 
     <h3>If I delete a profile, is it really gone?</h3>
-    <p>Yes. Deleting a profile removes its settings, its entire training history, <strong>and</strong> the on-device safety copies of that profile's data. The confirmation dialog means it when it says this can't be undone. If there's any doubt, export a backup first. (The app won't let you delete the last remaining profile.)</p>
+    <p>Yes. Deleting a profile removes its settings, its entire training history, <strong>and</strong> the on-device safety copies of that profile's data. The confirmation dialog means it when it says this can't be undone. If there's any doubt, export a backup first — that profile's row menu has its own <span class="ui">Export…</span>, so you don't even need to switch to it. (The app won't let you delete the last remaining profile.)</p>
 
     <h3>Do profiles share anything?</h3>
     <p>Training-wise, nothing. Each profile keeps its own settings, units, history, and progress on this device — your deload doesn't touch your kid's bench. The only shared things are device-level preferences: appearance and the rest-timer settings.</p>
