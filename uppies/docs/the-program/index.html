@@ -29,17 +29,18 @@
     </nav>
     <p class="eyebrow">The method</p>
     <h1>The program</h1>
-    <p class="lede">Everything Uppies prescribes — weights, warm-ups, deloads — comes from the Greyskull LP rules on this page.</p>
+    <p class="lede">Uppies uses an adapted training template inspired by Greyskull LP and Phrak’s popular community variant, with the schedule and progression rules explained here.</p>
 
     <h2>What Greyskull LP is</h2>
     <p>Greyskull LP is a <strong>linear progression</strong> program: you train three days a week, and every time you hit your rep target on a lift, the next session prescribes a little more weight. It's built for novice and early-intermediate lifters — the stage where you can still add weight almost every session, so the fastest way to get strong is simply to keep showing up and letting the numbers climb.</p>
-    <p>Uppies is a faithful port of the <strong>Greyskull Linear Progression Program (2020 v2.1)</strong> spreadsheet from LiftVault. Faithful is not a figure of speech: the app's calculation engine was verified against the source workbook cell for cell, reproducing all 272 computed working weights and warm-ups across the sheet's 24 sessions exactly.</p>
-    <p>The app knowingly departs from the spreadsheet in only a couple of places, both bug fixes:</p>
+    <p>The app’s lift pairing and working-set structure draw particularly from <strong>Phrak’s Greyskull LP variant</strong>, while Uppies adds alternating arm work and weekly core/accessory work. Its calculation engine began as a port of the <strong>Greyskull Linear Progression Program (2020 v2.1)</strong> spreadsheet from LiftVault and was verified against that workbook cell for cell, reproducing all 272 computed working weights and warm-ups across the sheet’s 24 sessions exactly.</p>
+    <p>The app makes three deliberate corrections to the spreadsheet’s formulas:</p>
     <ul>
-      <li><strong>Blank is not zero.</strong> The sheet treats an empty rep cell and a logged 0 identically — both add weight. In Uppies, <strong>no entry</strong> just projects the weight forward for planning, while <strong>an explicitly logged 0</strong> counts as a failure and deloads. A session you haven't done yet and a session where you got zero reps are not the same thing.</li>
+      <li><strong>Blank is not zero.</strong> The sheet’s main-lift formula treats an empty rep cell and a logged 0 identically — both add weight. In Uppies, <strong>no entry</strong> follows the unlogged planning projection (one increment for a main lift, or a hold for an accessory), while <strong>an explicitly logged and confirmed 0</strong> counts as a failure and deloads. A session you haven't done yet and a session where you got zero reps are not the same thing.</li>
       <li><strong>Bicep Curl reads its own rep target.</strong> The sheet's curl formula compares your reps against the Tricep Extension's target — a copy-paste bug that's invisible only because both default to 12. Uppies fixes it.</li>
       <li><strong>Barbell lifts never go below the bar.</strong> The sheet's deload math will happily prescribe a 12.5 lb "barbell" bench, which no bar can weigh. In Uppies, barbell prescriptions floor at your configured bar weight — the empty bar is the lightest set there is — and progression resumes from the bar.</li>
     </ul>
+    <p>Uppies is independently developed and is not affiliated with or endorsed by Greyskull Nation or the creator of Greyskull LP. If you want to learn more from the original source, the <a href="https://store.greyskullnation.com/products/greyskull-lp-third-edition">official Greyskull LP book is available here</a>.</p>
 
     <h2>The week</h2>
     <p>Each session works five blocks: <strong>Press</strong>, <strong>Pull</strong>, <strong>Legs</strong>, <strong>Arms</strong>, and <strong>Core</strong>. Each block rotates between two lifts, but on two different schedules:</p>
@@ -67,8 +68,8 @@
       <tr><td>Deadlift</td><td>1 × 5+ only</td></tr>
       <tr><td>Tricep Ext., Bicep Curl, Ab Rollout, Shrug</td><td>2 × 12, then 1 × 12+</td></tr>
     </table>
-    <p>The deadlift really is a single all-out set — one heavy pull a week is plenty of lower-back work on top of three squat days.</p>
-    <p><strong>The final set drives everything.</strong> Only the AMRAP set's reps are read by the progression rules; the earlier straight sets are logged but never feed a formula. That's the genius of the design: the last set is a built-in test of whether the weight is still easy, and how far past the target you push it determines whether you progress normally, jump ahead, or back off. Leave nothing in the tank on that set.</p>
+    <p>The deadlift really is a single AMRAP working set — one heavy pull a week is plenty of lower-back work on top of three squat days.</p>
+    <p><strong>The final set drives everything.</strong> Only the AMRAP set's reps are read by the progression rules; the earlier straight sets are logged but never feed a formula. Treat AMRAP as “as many <em>good</em> reps as possible”: keep roughly 1–2 crisp reps in reserve, and stop if form breaks down or bar speed slows markedly. The result determines whether you progress normally, jump ahead, or back off without turning every workout into a true max-effort test.</p>
     <div class="note"><span class="label">Good to know</span><p>Reps you type stay a draft until you check off the final working set. Progression only uses confirmed results — see <a href="../using-the-app/">Using the app</a> for how logging works.</p></div>
 
     <h2>Progression rules</h2>
@@ -122,7 +123,7 @@
     <p>Uppies suggests conservative defaults for each lift when you set up: an empty bar (45 lb / 20 kg) for Squat, Bench, and OHP; a lightly loaded bar that can rest on the floor for Deadlift (95 lb / 40 kg) and Row (65 lb / 30 kg); an empty bar for Shrug; the smallest common dumbbell (5 lb / 2.5 kg) for curls and tricep extensions; and plain bodyweight for Chin-up and Ab Rollout.</p>
     <p>Entering your own number instead? The app's guidance: pick a weight you could manage for about <strong>8–10 good reps today</strong>. That leaves the first sessions comfortably below your limit while the progression catches up to you.</p>
     <h3>The starting weight calculator</h3>
-    <p>If you've trained before and remember a recent hard set, the <span class="ui">Starting weight calculator</span> (in <span class="ui">Settings</span>, and offered per lift during onboarding) works out a start for you:</p>
+    <p>If you've trained before and remember a recent hard set, the <span class="ui">Starting weight calculator</span> in <span class="ui">Settings → Exercise Settings</span> works out a start for Bench, Overhead Press, Squat, Deadlift, or Row. The same estimate method is available when configuring those lifts during onboarding:</p>
     <ol>
       <li>Enter the weight and reps (1–12) of a recent hard set. The app estimates your <strong>1-rep max</strong> from published conversion tables.</li>
       <li>It takes <strong>90%</strong> of that as your training max — the number you can hit on any given day, not just your best day.</li>
@@ -133,7 +134,7 @@
     <h2>Bodyweight movements</h2>
     <p>Chin-ups and ab rollouts are bodyweight movements, so the weight Uppies tracks for them is <strong>added</strong> weight — plates on a belt, a dumbbell between the feet — and legitimately starts at nothing.</p>
     <ul>
-      <li><strong>Chin-up</strong> follows the main-lift rule. Start unloaded; the sets are rep-only. Once bodyweight chins are comfortably beating the target, give the lift a starting weight in <span class="ui">Settings</span> (even 2.5 lb) and it progresses like any other main lift from there.</li>
+      <li><strong>Chin-up</strong> follows the main-lift rule. Start unloaded; the sets are rep-only. Once bodyweight chins are comfortably beating the target, open <span class="ui">Settings → Exercise Settings → Chin-up</span>, turn on <span class="ui">Add weight</span>, and it progresses like any other main lift from there.</li>
       <li><strong>Ab Rollout</strong> is an accessory and typically stays unloaded — its default increment is 0, so it holds as a pure rep movement.</li>
     </ul>
     <p>Unloaded sets still count. Every confirmed rep goes into your total-rep counts on the Progress tab; what unloaded work doesn't contribute is <strong>loaded volume</strong>, since there's no external weight to multiply. Ten bodyweight chins are ten reps in the book, and zero pounds moved — both statements are true, and the app records both honestly.</p>

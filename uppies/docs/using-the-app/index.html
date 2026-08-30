@@ -37,25 +37,32 @@
       backing up months of training.</p>
 
     <h2>First run: the setup guide</h2>
-    <p>The first time you open Uppies, a short setup guide walks you through everything the
-      program needs. Nothing in it is final — every choice can be changed later in <span
-      class="ui">Settings</span>.</p>
+    <p>The first time you open Uppies, a setup guide explains the program and the interface,
+      then helps configure the current profile. Nothing in it is final — every choice can be
+      changed later in <span class="ui">Settings</span>.</p>
     <ul>
+      <li><strong>The program.</strong> The guide starts with the Greyskull LP and Phrak
+        foundation, the weekly lift rotation, working-set structure, AMRAP guidance, and the
+        rules that determine the next weight.</li>
       <li><strong>Profile name.</strong> Optional, but worth setting if two people will share
         the device. Leave it blank to stay "Me".</li>
+      <li><strong>Using the app.</strong> Interactive pages demonstrate draft reps, final-set
+        confirmation, rest timers, history navigation, advancing a workout, Progress, and
+        Workout Together.</li>
       <li><strong>Units.</strong> Pounds or kilograms. Switching converts the profile's weights
         and rounding values for you, so it's safe to change your mind later.</li>
-      <li><strong>Starting weights.</strong> For each of the ten lifts you can tap the checkbox
-        to accept the suggested weight, or open the lift to enter a weight directly or estimate
-        one from a recent hard set (you enter the weight and reps; Uppies works back through an
-        estimated 1RM to a deliberately conservative starting point).</li>
+      <li><strong>Starting weights.</strong> Set the bar weight at the top of the page. For each
+        of the ten lifts, tap the checkbox to accept its suggestion or open the lift to enter a
+        value directly. Supported barbell lifts can also estimate a conservative start from a
+        recent hard set; bodyweight movements suggest bodyweight first.</li>
     </ul>
-    <div class="note"><span class="label">Good to know</span><p>The guide is resumable. Tap
-      <span class="ui">Skip</span> at any point and the unreviewed lifts simply use their
-      suggested values — a "Review starting weights" card appears on the Workout screen, and
-      <span class="ui">Settings → Finish setup guide</span> reopens the walkthrough right where
-      it matters. Not sure what to pick? Start lighter than your ego suggests; the program
-      catches up fast.</p></div>
+    <div class="note"><span class="label">Good to know</span><p>Tap <span class="ui">Skip</span>
+      at any point and unreviewed lifts keep their suggested values. A "Review starting
+      weights" card appears on the Workout screen, and <span class="ui">Settings → Finish setup
+      guide</span> reopens the walkthrough; lifts you already reviewed stay checked. Once all
+      ten are reviewed, the Settings action becomes <span class="ui">Review setup guide</span>.
+      Not sure what to pick? Start lighter than your ego suggests; the program catches up
+      fast.</p></div>
 
     <h2>The Workout screen</h2>
     <p>The Workout tab shows one session at a time, with one card per lift. Each card has the
@@ -75,12 +82,14 @@
     <h3>Draft vs. confirmed — the one concept worth learning</h3>
     <p>Reps you enter are a <strong>draft</strong> until you check the final set's checkbox.
       Only a confirmed final set counts as a result, and only then does progression read it.</p>
-    <p>Concretely: say your bench is at 100 lb with a 5-rep target. You grind out 7 reps and tap
-      the stepper up to 7. At this point nothing has changed — the outcome row stays blank and
-      next session's bench is still whatever it was. Check the final set's box and it becomes
-      official: the card shows <strong>Target Met</strong> and the next bench weight becomes
-      102.5 lb. Realize you miscounted and change the 7 to a 6? The checkbox clears itself, the
-      result goes back to being a draft, and you confirm again when you're sure.</p>
+    <p>Concretely: say your bench is at 100 lb with a 5-rep target. Before the result is
+      confirmed, the blue line uses the unlogged planning projection — 102.5 lb in this
+      example. You grind out 7 reps and tap the stepper up to 7. The outcome row stays blank,
+      and typing alone does not recalculate that projection. Check the final set's box and the
+      result becomes official: the card shows <strong>Target Met</strong> and confirms 102.5 lb
+      as the next bench weight. Realize you miscounted and change the 7 to a 6? The checkbox
+      clears itself, the result goes back to being a draft, and you confirm again when you're
+      sure.</p>
     <p>The checkbox on the final set stays disabled until you've entered reps — you can't
       confirm a result that doesn't exist yet.</p>
     <h3>Outcomes and the next weight</h3>
@@ -147,8 +156,8 @@
       the blue next-weight line, which already shows the new value.</p>
 
     <h2>Profiles and Workout Together</h2>
-    <p>Profiles let several people train on one device with completely separate settings,
-      history, progress, and preferences. Manage them from <span class="ui">Settings → Profile →
+    <p>Profiles let several people train on one device with completely separate program
+      settings, history, and progress. Manage them from <span class="ui">Settings → Profile →
       Manage Profiles</span>: create with <span class="ui">New Profile</span>, and rename,
       export, or delete from each row's menu. Deleting removes that profile's settings and training history
       for good, and the last remaining profile can't be deleted. A brand-new profile is offered
@@ -174,9 +183,9 @@
       charts. Like the in-workout totals, these count only confirmed work — a session you
       half-logged and abandoned doesn't inflate your history.</p>
     <h3>By Lift</h3>
-    <p><span class="ui">By Lift</span> focuses on one of the six main lifts (accessories aren't
-      charted — they hold weight by design, so their trend line would just be flat). You get
-      summary cards and two charts: <span class="ui">Working weight</span> over time, and <span
+    <p><span class="ui">By Lift</span> focuses on one of the six main lifts; accessories aren't
+      included in the chart picker. You get summary cards and two charts: <span
+      class="ui">Working weight</span> over time, and <span
       class="ui">Estimated 1RM</span> computed from each confirmed AMRAP set using the Brzycki
       formula. Estimates from sets above 12 reps are drawn as larger orange points — the formula
       loses accuracy up there, so treat those as rough. A note below the chart explains the
@@ -203,6 +212,12 @@
         every weight and rounding value. Also the adjustable <span class="ui">Bar weight</span>
         (warm-ups and the plate calculator both read it, so a 35 lb or technique bar works fine)
         and <span class="ui">Warm-up rounding</span>.</td></tr>
+      <tr><td><span class="ui">Training</span></td><td>Open <span class="ui">Exercise
+        Settings</span> for the starting-weight calculator and the complete list of lifts. Each
+        lift has its own <span class="ui">Starting weight</span>, <span
+        class="ui">Increment</span>, <span class="ui">Rep target</span>, and <span
+        class="ui">Rounding</span>; chin-ups and ab rollouts also have an <span class="ui">Add
+        weight</span> toggle.</td></tr>
       <tr><td><span class="ui">Appearance</span></td><td>System, Light, or Dark.</td></tr>
       <tr><td><span class="ui">Rest timer</span></td><td>On/off, the warm-up and working-set
         durations, and the end-of-rest notification.</td></tr>
@@ -211,18 +226,15 @@
         deloading immediately, and after your chosen number of consecutive misses (2–5) the
         weight resets to 90% of your best successful set. See <a href="../the-program/">The
         program</a> for the trade-off.</td></tr>
-      <tr><td>Per-lift sections</td><td>Every lift's <span class="ui">Starting weight</span>,
-        <span class="ui">Increment</span>, <span class="ui">Rep target</span>, and <span
-        class="ui">Rounding</span>, grouped by movement block. Chin-ups and ab rollouts add an
-        <span class="ui">Add weight</span> toggle for training loaded or at
-        bodyweight.</td></tr>
       <tr><td><span class="ui">Data</span></td><td><span class="ui">Export backup…</span> and
         <span class="ui">Import backup…</span> for the active profile, plus <span
         class="ui">Export full backup…</span> and <span class="ui">Import full backup…</span>
         covering every profile on the device — see below.</td></tr>
-      <tr><td>Tools</td><td>Reopen the setup guide, the standalone <span class="ui">Starting
-        weight calculator</span> (the same estimate-from-a-recent-set math as onboarding), and
-        <span class="ui">Reset all progress</span>.</td></tr>
+      <tr><td><span class="ui">About the program</span></td><td>Program attribution and a link
+        to the official Greyskull LP book.</td></tr>
+      <tr><td>Tools</td><td>Reopen the setup guide or <span class="ui">Reset all
+        progress</span>. The starting-weight calculator now lives in <span
+        class="ui">Exercise Settings</span>.</td></tr>
     </table>
 
     <h2>Backups</h2>

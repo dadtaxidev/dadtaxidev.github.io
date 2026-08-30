@@ -34,18 +34,18 @@
     <h2>Weights &amp; progression</h2>
 
     <h3>Why didn't my weight go up?</h3>
-    <p>Reps you type are a <strong>draft</strong> until you check off the final working set. Progression only reads a result once that last set's checkbox is confirmed — until then the exercise is still "pending" and the next occurrence keeps its old weight.</p>
-    <p>This is deliberate: you can revise a rep count mid-session, or log a workout after the fact, and nothing moves until you say the session actually happened. Check the box on the final set and the blue "Next working weight" line updates immediately.</p>
+    <p>Reps you type are a <strong>draft</strong> until you check off the final working set. Progression only reads that rep count once the checkbox is confirmed. Until then, the blue "Next working weight" line keeps the unlogged planning projection: one increment for a main lift, or the same weight for an accessory.</p>
+    <p>This is deliberate: you can revise a rep count mid-session or log a workout after the fact without each tap changing the prescription. Check the box on the final set and the blue line recalculates from the confirmed result.</p>
 
     <h3>Why did next session's weight suddenly change?</h3>
     <p>You probably edited a past session. Every prescribed weight is recomputed from your full history, so correcting a rep count from three weeks ago rewrites every later occurrence of that lift — the same way fixing a cell in a spreadsheet re-evaluates everything that references it.</p>
     <p>The app tells you when this happens: right after the edit, an orange caption appears under the lift, like <strong>Rewrote next Bench: 102.5 lb → 105 lb</strong>, showing the old and new weight. The blue line above it always shows the current value.</p>
 
     <h3>I entered 0 reps — why did the weight drop?</h3>
-    <p>An explicit <strong>0 counts as a failure</strong>, so the lift deloads. A <strong>blank</strong> entry means "not done yet" — the app projects the weight forward for planning and changes nothing.</p>
+    <p>An explicit, confirmed <strong>0 counts as a failure</strong>, so the lift deloads. A <strong>blank</strong> entry means "not done yet" — the app uses its unlogged planning projection instead (one increment for a main lift, or a hold for an accessory).</p>
     <div class="note">
       <span class="label">Good to know</span>
-      <p>The original spreadsheet treats 0 the same as a success and adds weight. That's fine for an untouched future column, but wrong for a set where you genuinely got zero reps — so Uppies deliberately splits the two. It's the one place the app knowingly disagrees with the sheet.</p>
+      <p>The original spreadsheet treats 0 the same as a success and adds weight. That's fine for an untouched future column, but wrong for a set where you genuinely got zero reps — so Uppies deliberately splits the two. It is one of the formula corrections documented in <a href="../the-program/">The program</a>.</p>
     </div>
 
     <h3>What does the "Welcome back" prompt do?</h3>
@@ -71,7 +71,7 @@
     <p>No, that's the program. Deadlift is a single AMRAP set ("5+") with warm-ups before it; every other lift gets two straight sets plus the AMRAP. Your lower back thanks the program's author.</p>
 
     <h3>Can I change rep targets or increments per lift?</h3>
-    <p>Yes. Tap any lift in <span class="ui">Settings</span> to adjust its starting weight, increment, rep target, and rounding independently. Accessory lifts also show a rep-target stepper right on the Settings list. The footer under each lift's controls restates its progression rule using your own numbers.</p>
+    <p>Yes. Open <span class="ui">Settings → Exercise Settings</span>, then choose a lift to adjust its starting weight, increment, rep target, and rounding independently. Chin-ups and ab rollouts also let you turn added weight on or off. The footer under each lift's controls restates its progression rule using your own numbers.</p>
 
     <h2>Logging</h2>
 
@@ -136,7 +136,7 @@
     <p>No and no. There's nothing to sign up for, nothing to sign in to, and the app works fine in a basement gym with no signal. All your data lives on your device.</p>
 
     <h3>What data leaves my device?</h3>
-    <p>Nothing. No analytics, no ads, no tracking, no server. The only way training data ever leaves the device is a backup file you explicitly export and choose where to send. See the <a href="../../privacy/">privacy policy</a> for the formal version.</p>
+    <p>Uppies sends nothing automatically: no analytics, ads, tracking, or app server. Training data only leaves when you explicitly export a backup and choose where to send it. If you email support or submit TestFlight feedback, the developer receives whatever you voluntarily include. See the <a href="../../privacy/">privacy policy</a> for the formal version.</p>
 
     <p style="text-align:center; color:var(--ink-soft);">
       Still stuck? <a href="../../support/">Email support</a>.</p>
