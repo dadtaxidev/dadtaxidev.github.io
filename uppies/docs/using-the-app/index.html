@@ -74,6 +74,9 @@
       a set off as you finish it. Main lifts prescribe two straight sets of 5 and a final "5+"
       set; the deadlift is the exception with a single "5+" working set; accessories prescribe
       two sets of 12 and a final "12+".</p>
+    <p>The blue marker shows the next set to do. Main lifts still advance in program order,
+      while each accessory has its own marker. You can alternate the arm and core movements as
+      a superset or finish them in whichever order suits the gym.</p>
     <h3>The reps stepper</h3>
     <p>The final working set is an AMRAP — as many reps as you can with good form. Enter what
       you got with the <span class="ui">Reps on last set</span> stepper. The minus and plus
@@ -118,16 +121,18 @@
 
     <h2>Rest timers</h2>
     <p>Checking off a warm-up or working set starts a rest countdown in the bar at the top of
-      the Workout screen — except the last set of an exercise, because you're done with that
-      lift, not resting for it. Warm-ups and working sets have separate durations: 1:00 and 4:00
-      by default, each adjustable from 0:30 to 5:00 in <span class="ui">Settings → Rest
-      timer</span>.</p>
+      the Workout screen. Warm-ups and final sets use the short warm-up duration; other working
+      sets use the working duration. The final exercise does not start another timer because the
+      session is over. The defaults are 1:00 and 4:00, each adjustable from 0:30 to 5:00 in
+      <span class="ui">Settings → Rest timer</span>.</p>
     <ul>
       <li>While a timer runs, <span class="ui">+15s</span> and <span class="ui">−15s</span>
         buttons nudge it, and the ring around the start/stop button drains as rest elapses.</li>
       <li>When time is up the bar shows <strong>Rest over</strong> and stays put until you
         dismiss it or check off another set — no vanishing message to miss
         mid-conversation.</li>
+      <li>Checking off an accessory while a timer is already running leaves that countdown
+        alone, so alternating accessories does not restart or shorten your rest.</li>
       <li>Turn on <span class="ui">Notify when rest ends</span> to get a notification even if
         you've switched apps or locked the phone. It's off by default and asks for notification
         permission when enabled.</li>
@@ -136,9 +141,11 @@
     </ul>
 
     <h2>Navigating sessions and editing history</h2>
-    <p>The chevrons in the toolbar move one session back or forward, and the <span
-      class="ui">Next session</span> button at the bottom of the workout does the same as the
-      forward chevron. On iPhone, tap the <span class="ui">Week 2, Day 1</span> title to open
+    <p>The chevrons in the toolbar move one session back or forward, and <span
+      class="ui">Complete session</span> at the bottom advances from the current workout. After
+      a trained session, Uppies shows a summary of the confirmed reps and loaded volume, then
+      returns to the top of the next workout. On iPhone, tap the <span class="ui">Week 2, Day
+      1</span> title to open
       <span class="ui">History</span> — a week-by-week list of every session so far, with a
       one-line summary of what you logged (like "Bench 102.5×5 · Row 52.5×6"), its totals, a
       green checkmark when complete, and the date. On an iPad in full screen, History lives in
@@ -173,6 +180,10 @@
       1:23" or "Sam · Ready" — because each participant keeps an independent timer, along with
       their own session, weights, history, and totals. Nothing is ever mixed. Tap the X in the
       bar (or <span class="ui">End Workout Together</span> in the menu) when you're done.</p>
+    <p>When someone taps <span class="ui">Complete session</span>, Uppies stops that lifter's
+      timer and hands the phone to the first participant who still has work remaining. Once
+      everyone finishes, the team summary keeps <span class="ui">End Workout Together</span>
+      fixed at the bottom of the sheet.</p>
 
     <h2>The Progress tab</h2>
     <p>Progress has two views, switched at the top.</p>
